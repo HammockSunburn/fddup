@@ -152,9 +152,9 @@ impl Fddup {
 
                 // Find work again, but only on the subset of work for this loop. Note that we use
                 // usize::MAX here rather than the configured number of threads. This is because
-                // it's possible that in the earlier call to `find_work` may have obtained files
-                // than the number of threads if the number of files for a single size spanned the
-                // remaining number of threads.
+                // it's possible that in the earlier call to `find_work` may have obtained more
+                // files than the configured number of threads if the number of files for a single
+                // size spanned the remaining number of threads.
                 w = algo::find_work(&mut results, usize::MAX);
             }
         }
