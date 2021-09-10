@@ -1,15 +1,15 @@
 [package]
 name = "fddup"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["Hammock Sunburn"]
 edition = "2018"
 
 [dependencies]
-anyhow = "1.0"
-clap = "2.33"
-hex = "0.4"
-humansize = "1.1"
-num_cpus = "1.13"
-num-traits = "0.2"
-sha2 = "0.9"
-tokio = { version = "1.0", features = ["macros", "rt", "rt-multi-thread"] }
+anyhow = "1.0.43"
+clap = "2.33.3"
+hex = "0.4.3"
+humansize = "1.1.1"
+num_cpus = "1.13.0"
+num-traits = "0.2.14"
+sha2 = "0.9.8"
+tokio = { version = "1.11.0", features = ["macros", "rt", "rt-multi-thread"] }

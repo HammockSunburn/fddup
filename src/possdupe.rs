@@ -99,7 +99,7 @@ impl PossDupe {
     }
 
     pub fn bytes_remaining(&self) -> u64 {
-        self.key.len.checked_sub(self.bytes_read).unwrap_or(0)
+        self.key.len.saturating_sub(self.bytes_read)
     }
 
     pub fn update_digest(&mut self, buffer: &[u8]) {

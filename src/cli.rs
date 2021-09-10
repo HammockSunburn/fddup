@@ -51,7 +51,7 @@ impl Options {
         let default_read_size = MAX_READ_BUFFER_SIZE.to_string();
 
         let matches = App::new("fddup")
-            .version("1.0")
+            .version("1.0.3")
             .author("Hammock Sunburn <hammocksunburn@gmail.com>")
             .about("Find duplicate files")
             .arg(
@@ -108,8 +108,8 @@ impl Options {
             )
             .get_matches();
 
-        let files = matches.value_of(OPTION_FILES).map(|s| String::from(s));
-        let output = matches.value_of(OPTION_OUTPUT).map(|s| String::from(s));
+        let files = matches.value_of(OPTION_FILES).map(String::from);
+        let output = matches.value_of(OPTION_OUTPUT).map(String::from);
         let skip_empty = matches.is_present(OPTION_SKIP_EMPTY);
         let verbose = matches.is_present(OPTION_VERBOSE);
         let show_size = matches.is_present(OPTION_SHOW_SIZE);

@@ -67,7 +67,7 @@ where
                 duplicates.push(item);
             } else {
                 work.push(item);
-                remaining = remaining.checked_sub(1).unwrap_or(0);
+                remaining = remaining.saturating_sub(1);
             }
         } else {
             uniques.push(item);
@@ -77,7 +77,7 @@ where
     Work {
         work,
         duplicates,
-        uniques: uniques,
+        uniques,
     }
 }
 
